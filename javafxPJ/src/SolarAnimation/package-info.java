@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+/**
+ * @author shsmchlr
+ *
+ */
+package SolarAnimation;
