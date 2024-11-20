@@ -14,6 +14,10 @@ import javafx.scene.image.Image;
 public class SolarSystem {
 	private double sunX, sunY, sunSize;				// positions of sun
     private Image sun;								// imnge of sun
+  private Planet Earth;
+  private Planet Mars;
+  private Satellite Moon;
+    
 
 //    private Planet Earth;
     
@@ -26,6 +30,11 @@ public class SolarSystem {
 	    sunX = 0.5;
 	    sunY = 0.5;
 	    sunSize = 0.2;
+	    Earth = new Planet("Earth", new Image(getClass().getResourceAsStream("earth.png")), 1, 0.3, 0.05);
+	    Mars = new Planet("Mars", new Image(getClass().getResourceAsStream("mars.png")), 0.5, 0.4, 0.04);
+	      Moon = new Satellite("Moon", Earth, new Image(getClass().getResourceAsStream("moon.png")), 1, 0.05, 0.02);
+	   
+	    
 	}
 
 	/**
@@ -33,6 +42,9 @@ public class SolarSystem {
 	 * @param angle	indication of time/angle
 	 */
 	public void updateSystem (double angle) {
+		Earth.updatePosition(angle);
+		Mars.updatePosition(angle);
+		Moon.updatePosition(angle);
 		
 	} 
 	
@@ -41,7 +53,13 @@ public class SolarSystem {
 	 * @param s
 	 */
 	public void drawSystem(MyCanvas mc) {
+		mc.clearCanvas();								// clear canvas
 		drawImage(mc, sun, 0, 0, sunSize);			// draw Sun,
+		Earth.drawPlanet(this, mc);
+		Mars.drawPlanet(this, mc);
+		Moon.drawPlanet(this, mc);
+	
+		
 	}
 	
 	/**
@@ -61,8 +79,10 @@ public class SolarSystem {
 	 * return String with info of planet(s) in system
 	 */
 	public String toString() {
-		String s = "";
-		return s;
+		return Earth.toString() + "\n" + Mars.toString() + "\n" + Moon.toString();
+		
+		
+		
 	}
 
 }

@@ -50,7 +50,9 @@ public class SimpleSolar {
 	 */
 	public void setSystem(MyCanvas mc, double x, double y) {
 		// note x,y in range 0.. canvassize
-	
+		sunX = x/mc.getXCanvasSize();
+		sunY = y/mc.getYCanvasSize();
+		
 	}
 
 	/**

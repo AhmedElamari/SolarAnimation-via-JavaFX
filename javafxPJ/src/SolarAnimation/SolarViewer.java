@@ -20,7 +20,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-
 public class SolarViewer extends Application {
 	private int canvasSize = 512;				// constant for canvas size
 	private MyCanvas mc; 						// canvas in which system drawn
@@ -131,7 +130,7 @@ public class SolarViewer extends Application {
 	 */
 	@Override
 	public void start(Stage stagePrimary) throws Exception {
-		stagePrimary.setTitle("A.E's Solar System Simulator");
+		stagePrimary.setTitle("RJMs Solar System Simulator");
 
 	    BorderPane bp = new BorderPane();			// create border pane
 
